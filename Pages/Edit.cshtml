@@ -1,0 +1,19 @@
+@page
+@model EditModel
+
+@{
+    ViewData["Title"] = "Edit Client";
+}
+
+
+<div class="text-center">
+    <h2> Edit A Client @Model.client.name </h2>
+    <form class="d-flex flex-column adc-table" method="POST">
+        <input type="hidden" name="id" value="@Model.client.id">
+        <input placeholder="Name" type="text" name="name"  value="@Model.client.name">
+        <input placeholder="Email" type="text" name="email" value="@Model.client.email">
+        <input placeholder="Phone" type="text" name="phone" value="@Model.client.phone">
+        <input placeholder="Address" type="text" name="address" value="@Model.client.address">
+        <button class="btn btn-secondary">Submit</button>
+    </form>
+</div>

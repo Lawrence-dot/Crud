@@ -1,0 +1,18 @@
+@page
+@model CreateModel
+
+@{
+    ViewData["Title"] = "Add Client";
+}
+
+
+<div class="text-center">
+    <h2> Add new Client </h2>
+    <form class="d-flex flex-column adc-table" asp-action="" role="form" method="POST">
+        <input placeholder="Name" type="text" name="name"   value="@Model.client.name">
+        <input placeholder="Email" type="text" name="email" value="@Model.client.email">
+        <input placeholder="Phone" type="text" name="phone" value="@Model.client.phone">
+        <input placeholder="Address" type="text" name="address" value="@Model.client.address">
+        <button class="btn btn-secondary">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,41 @@
+﻿@page
+@model IndexModel
+
+
+<div class="text-center">
+    <h1 class="display-4">Client Database</h1>
+    <div class="d-flex justify-center flex-column mt-3 mb-3">
+        <div class="input-group search-box d-flex justify-content-center mx-auto">
+            <input type="text" name="" id="">
+                <button class="btn bg-secondary" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M272 304h-96C78.8 304 0 382.8 0 480c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32C448 382.8 369.2 304 272 304zM48.99 464C56.89 400.9 110.8 352 176 352h96c65.16 0 119.1 48.95 127 112H48.99zM224 256c70.69 0 128-57.31 128-128c0-70.69-57.31-128-128-128S96 57.31 96 128C96 198.7 153.3 256 224 256zM224 48c44.11 0 80 35.89 80 80c0 44.11-35.89 80-80 80S144 172.1 144 128C144 83.89 179.9 48 224 48z"/></svg></button>
+            </div>
+        <div class="result py-2 bg-secondary hidden">
+
+        </div>
+    </div>
+    <a class="btn" href="/Addclient"> Add New Client </a>
+    <table class="bg-blue d-flex flex-column border mt-2 bg-light td-2">
+        <thead class="d-flex flex-row td-2 font">
+            <td class="first"> S/N </td>
+            <td class=""> Name </td>
+            <td class=""> Email </td>
+            <td class=""> Phone </td>
+            <td class=""> Address </td>
+            <td></td>
+        </thead>
+        @foreach (var item in Model.listclients)
+        {
+                        <tr class="d-flex flex-row td-2">
+                            <td class="first"> @item.id </td>
+                            <td class=""> @item.name.ToString()</td>
+                            <td class=""> @item.email</td>
+                            <td class=""> @item.phone.ToString()</td>
+                            <td class=""> @item.address.ToString()</td>
+                            <td>
+                                <a class="ms-auto btn btn-outline-danger" id="@item.id" href="/Edit?id=@item.id"> Edit </a>
+                                <a class="btn btn-outline-primary" id="@item.id" href="/Delete?id=@item.id"> Delete</a> 
+                            </td>
+                        </tr>
+        }
+        </div>
+    </div>

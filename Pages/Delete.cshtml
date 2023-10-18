@@ -1,0 +1,30 @@
+@page
+
+@using System.Data.SqlClient;
+
+
+@{
+    try
+    {
+        String id = Request.Query["id"];
+        String connectionString = "Data Source=DESKTOP-C6S980N;Initial Catalog=Damilare2;Integrated Security=True";
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            String sql = "DELETE FROM client where id=@id";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@id", id);
+                command.ExecuteNonQuery();
+            }
+
+            Response.Redirect("/index");
+        }
+    }
+
+    catch (Exception e)
+    {
+        Console.WriteLine(e.Message);
+    }
+
+}

@@ -1,0 +1,57 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+td.first {
+  min-width: 40px;
+  width: 50px;
+}
+
+td {
+  min-width: 182px;
+  width: 182px;
+  margin: 10px 0;
+}
+
+thead td {
+  background-color: rgb(195, 195, 235);
+  font-weight: 700;
+  padding: 5px 0;
+}
+
+button {
+  color: white;
+  padding: 3px 5px;
+  border-radius: 5px;
+}
+
+table {
+  overflow-x: auto;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.adc-table input {
+  margin: 7px 0;
+  border-radius: 5px;
+  padding: 4px 2px;
+}
+
+.hidden {
+  display: none;
+}
