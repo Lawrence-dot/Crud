@@ -63,12 +63,13 @@ namespace Test.Pages
             } else {
                 try
                 {
+                    Console.WriteLine(client.id);
                     String connectionString = "Data Source=DESKTOP-C6S980N;Initial Catalog=Damilare2;Integrated Security=True";
                     using (SqlConnection connection = new SqlConnection(connectionString))
                     {
                         connection.Open();
                         String sql = "UPDATE client " +
-                                    "SET name=@name, email=@email, phone=@phone, address=@address," +
+                                    "SET name=@name, email=@email, phone=@phone, address=@address " +
                                     "WHERE id=@id";
                         using (SqlCommand command = new SqlCommand(sql, connection))
                         {
@@ -77,7 +78,7 @@ namespace Test.Pages
                             command.Parameters.AddWithValue("@phone", client.phone); 
                             command.Parameters.AddWithValue("@address", client.address);
                             command.Parameters.AddWithValue("@id", client.id);
-                           command.ExecuteNonQuery();
+                            command.ExecuteNonQuery();
                         }
                     }
                     Response.Redirect("/index");
